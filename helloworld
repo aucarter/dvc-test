@@ -1,0 +1,11 @@
+Hello world
+
+az ad signed-in-user show --query objectId -o tsv | az role assignment create \
+    --role "Storage Blob Data Contributor" \
+    --assignee @- \
+    --scope "/subscriptions/'Azure subscription 1'/resourceGroups/malaria/providers/Microsoft.Storage/storageAccounts/malariadata"
+
+az storage container create \
+    --account-name malariadata \
+    --name test \
+    --auth-mode login

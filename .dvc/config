@@ -1,0 +1,5 @@
+[core]
+    remote = storage
+['remote "storage"']
+    url = azure://test/dvcstore
+    account_name = malariadata
